@@ -1,0 +1,258 @@
+﻿/* GOOGLE FONT */
+@import url('https://fonts.googleapis.com/css2?family=Comic+Neue&family=Poppins&display=swap');
+
+/* RESET */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Poppins', sans-serif;
+    background: linear-gradient(rgba(255, 255, 255, 0), rgb(67, 176, 255));
+    line-height: 1.6;
+    text-indent: 10px;
+    letter-spacing: 0.5px;
+    word-spacing: 1px;
+    text-transform: none;
+}
+
+/* HEADER */
+.headerElements {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    background: linear-gradient(rgba(0, 14, 176, 0.2), rgb(0, 3, 147));
+    padding: 10px 20px;
+}
+
+.tab ul {
+    display: flex;
+    gap: 10px;
+    list-style: none;
+}
+
+.tablinks {
+    background-color: inherit;
+    border: none;
+    outline: none;
+    cursor: pointer;
+    color: #f5b010;
+    font-size: 14px;
+    padding: 10px 14px;
+    transition: 0.3s;
+    border-radius: 5px;
+}
+
+    .tablinks:hover,
+    .tablinks.active {
+        background-color: rgb(96, 115, 229);
+        color: white;
+    }
+
+.Logo {
+    width: 150px;
+    height: 85px;
+    float: left;
+}
+
+.headerText {
+    color: #fff;
+    font-size: 2.8rem;
+    margin-left: 10px;
+    text-transform: uppercase;
+}
+
+/* HERO SECTION */
+.hero {
+    background: url('../img/Adventure 2.jpeg') center/cover no-repeat;
+    height: 300px;
+    position: relative;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    image-rendering: -webkit-optimize-contrast;
+    image-rendering: crisp-edges;
+}
+
+    .hero::after {
+        content: "";
+        position: absolute;
+        inset: 0;
+        backdrop-filter: blur(0px);
+        filter: blur(0px);
+        transition: filter 0.3s ease;
+        z-index: 0;
+    }
+
+    .hero:hover::after {
+        filter: brightness(0.5);
+        backdrop-filter: blur(1px);
+    }
+
+.hero-text {
+    padding: 10px 0;
+    transition: 0.5s ease;
+    opacity: 0;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    text-align: center;
+    font: bold 2.5vw 'Comic Neue', Verdana, sans-serif;
+    color: rgba(255, 255, 255, 1);
+    z-index: 1;
+    pointer-events: none;
+}
+
+.hero:hover .hero-text {
+    opacity: 1;
+    text-shadow: 0 0 10px rgba(255, 255, 255, 0.9), 0 0 20px rgba(255, 255, 255, 0.6), 0 0 30px rgba(255, 255, 255, 0.3);
+    animation: fadeInOutwards 0.7s ease forwards;
+}
+
+/* SECTION LAYOUT */
+.section {
+    width: 100%;
+    margin: auto;
+    padding: 20px;
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    justify-content: center;
+    gap: 20px;
+    border-bottom: 1px solid #eee;
+    background: linear-gradient( rgba(255, 204, 153, 0.5), rgba(255, 153, 102, 0.4) );
+    backdrop-filter: blur(4px);
+    border-radius: 12px;
+    border: 1px solid rgba(255, 255, 255, 0.3);
+    box-shadow: inset 0 0 10px rgba(0, 0, 0, 0.05), 0 4px 12px rgba(0, 0, 0, 0.1);
+}
+
+
+    .section h2::first-letter {
+        font-size: 150%;
+        color: #d62828;
+    }
+
+    .section p {
+        font-size: 1rem;
+        text-align: justify;
+    }
+
+.bodyList {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    list-style-type: none;
+    padding: 0;
+    margin: 0 auto;
+    text-align: center;
+  
+}
+
+    .bodyList li:nth-child(even) {
+        background-color: transparent;
+    }
+
+    .bodyList li:nth-child(odd) {
+        background-color: transparent;
+    }
+
+    .bodyList li {
+        max-width: 1200px;
+        width: 90vw;
+        margin: 30px auto;
+    }
+
+/* IMAGE AND TEXT */
+.section .image {
+    flex: 1 1 40%;
+}
+
+    .section .image img {
+        width: 100%;
+        border-radius: 8px;
+        box-shadow: 0 2px 6px rgba(0,0,0,0.15);
+        object-fit: cover;
+    }
+
+.section .text {
+    flex: 1 1 55%;
+    padding: 10px;
+}
+
+.section:hover {
+    background-color: rgba(255, 255, 255, 0.3);
+    backdrop-filter: blur(10px);
+}
+
+
+/* INTRODUCTION */
+.intro {
+    text-align: center;
+}
+
+    .intro h2 {
+        margin-bottom: 10px;
+    }
+
+/* RESPONSIVE DESIGN */
+@media (max-width: 768px) {
+    .section {
+        flex-direction: column;
+        text-align: center;
+        padding: 10px;
+    }
+
+        .section .image,
+        .section .text {
+            flex: 1 1 100%;
+            width: 100%;
+            text-align: center;
+        }
+
+            .section .image img {
+                max-width: 100%;
+                height: auto;
+            }
+
+    .hero h1 {
+        font-size: 1.4rem;
+        padding: 0 12px;
+    }
+}
+
+/* FOOTER */
+.footer {
+    text-align: center;
+    padding: 30px 20px;
+    font-size: 0.9rem;
+    z-index: 1;
+    position: relative;
+}
+
+.footer-content {
+    display: flex;
+    justify-content: center;
+    gap: 60px;
+    margin-bottom: 20px;
+    flex-wrap: wrap;
+}
+
+/* ANIMATION */
+@keyframes fadeInOutwards {
+    0% {
+        opacity: 0;
+        transform: translate(-50%, -50%) scale(0.8);
+    }
+
+    100% {
+        opacity: 1;
+        transform: translate(-50%, -50%) scale(1);
+    }
+}

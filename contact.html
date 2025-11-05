@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <!-- Meta Information -->
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="author" content="Rupendra" />
+  <meta name="description" content="Contact Visit Nepal for travel inquiries, feedback, or support." />
+  <meta name="keywords" content="Nepal, travel, contact, tourism, support" />
+  <meta name="language" content="en" />
+  <title>Visit Nepal – Contact | Rupendra 730783</title>
+
+  <!-- Styles & Fonts -->
+  <link rel="stylesheet" href="css/contactStyle.css" />
+  <link rel="icon" href="img/Logo/favicon.ico" type="image/x-icon" />
+  <link href="https://fonts.googleapis.com/css2?family=Raleway:wght@400;700&display=swap" rel="stylesheet">
+</head>
+<body>
+
+  <!-- ================= HEADER ================= -->
+  <header class="headerElements">
+    <figure>
+      <img src="img/Logo/Logo.png" alt="Visit Nepal Logo" class="Logo" title="Visit Nepal Logo" />
+      <figcaption class="visually-hidden">Visit Nepal Logo</figcaption>
+    </figure>
+    <h1 class="headerText">Visit Nepal</h1>
+
+    <!-- Navigation Menu -->
+    <nav class="tab">
+      <button onclick="location.href='index.html'">Home</button>
+      <button onclick="location.href='destinations.html'">Destinations</button>
+      <button onclick="location.href='activities.html'">Activities</button>
+      <button onclick="location.href='traveltips.html'">Travel Tips</button>
+      <button onclick="location.href='accommodation.html'">Accommodations</button>
+      <button onclick="location.href='contact.html'">Contact</button>
+    </nav>
+  </header>
+
+  <!-- ================= HERO SECTION ================= -->
+  <section class="hero">
+    <article class="hero-text">
+      <h2>We’d Love to Hear From You</h2>
+      <a href="#contactForm" class="btn">Get in Touch</a>
+    </article>
+  </section>
+
+  <!-- ================= CONTACT FORM SECTION ================= -->
+  <section id="contactForm" class="contact-section">
+    <h2 class="section-title">Contact Us</h2>
+    <p class="note">Fields marked with <span>*</span> are mandatory.</p>
+
+    <form class="contact-form">
+      <!-- Personal Info -->
+      <fieldset>
+        <legend>Personal Information</legend>
+
+        <label for="salutation">Salutation</label>
+        <select id="salutation" name="salutation">
+          <option value="">-- Select --</option>
+          <option value="Mr.">Mr.</option>
+          <option value="Ms.">Ms.</option>
+          <option value="Mrs.">Mrs.</option>
+          <option value="Dr.">Dr.</option>
+          <option value="Prof.">Prof.</option>
+        </select>
+
+        <label for="fullname">Full Name <span>*</span></label>
+        <input type="text" id="fullname" name="fullname" required />
+
+        <label for="phone">Phone Number <span>*</span></label>
+        <input type="tel" id="phone" name="phone" required />
+
+        <label for="email">Email Address</label>
+        <input type="email" id="email" name="email" />
+      </fieldset>
+
+      <!-- Message Box -->
+      <fieldset>
+        <legend>Your Message</legend>
+        <label for="message">Message</label>
+        <textarea id="message" name="message" rows="5"></textarea>
+      </fieldset>
+
+      <!-- Submit Button -->
+      <section>
+        <button type="submit" class="submit-btn">Submit</button>
+      </section>
+    </form>
+  </section>
+
+  <!-- ================= FOOTER ================= -->
+  <footer class="footer">
+    <aside>
+      <h4>Email Address</h4>
+      <p><a href="mailto:visitnepal369@gmail.com">visitnepal369@gmail.com</a></p>
+    </aside>
+
+    <aside>
+      <h4>Phone Number</h4>
+      <p><a href="tel:+9779741920820">+977-9741920820</a></p>
+    </aside>
+
+    <section>
+      <p><strong>&copy; Rupendra 730783 &mdash; All Rights Reserved &reg;</strong></p>
+    </section>
+  </footer>
+
+</body>
+</html>

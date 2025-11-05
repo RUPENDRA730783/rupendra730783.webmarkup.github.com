@@ -1,0 +1,288 @@
+/* === RESET & BASE STYLES === */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+/* Base layout and typography */
+body {
+  font-family: 'Raleway', sans-serif;
+  background: linear-gradient(rgba(255, 255, 255, 0), rgb(67, 176, 255));
+  background-attachment: fixed;
+  background-repeat: no-repeat;
+  line-height: 1.6;
+  text-indent: 1em;
+  word-spacing: 0.2em;
+}
+
+/* === HEADER SECTION === */
+.headerElements {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  flex-wrap: wrap;
+  background: linear-gradient(rgba(0, 14, 176, 0.2), rgb(0, 3, 147));
+  padding: 1em 2em;
+  border-radius: 0.5em;
+  position: relative;
+  z-index: 9999;
+}
+
+.Logo {
+  width: 150px;
+  height: auto;
+}
+
+.headerText {
+  color: #fff;
+  font-size: 1.8rem;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+}
+
+/* === NAVIGATION MENU === */
+.tab {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.5em;
+}
+
+.tab button {
+  background: none;
+  border: none;
+  color: #f5b010;
+  font-size: 0.875rem;
+  padding: 0.625em 0.875em;
+  border-radius: 0.3125em;
+  cursor: pointer;
+  transition: 0.3s;
+}
+
+.tab button:hover,
+.tab button:focus,
+.tab button:active {
+  background-color: rgb(96, 115, 229);
+  color: #fff;
+  font-weight: bold;
+  outline: none;
+}
+
+/* === HERO SECTION === */
+.hero {
+  background: url('../img/Destination.1.jpg') center/cover no-repeat;
+  height: 300px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  position: relative;
+  text-align: center;
+}
+
+.hero::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background-color: rgba(0, 0, 0, 0.3);
+}
+
+.hero-text {
+  position: relative;
+  z-index: 1;
+  color: #fff;
+  text-shadow: 2px 2px 8px rgba(255, 255, 255, 0.8);
+  padding: 1em;
+}
+
+.hero-text h2 {
+  font-size: 2rem;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+  opacity: 0;
+  visibility: hidden;
+  transform: scale(0.95);
+  transition: opacity 0.4s ease, transform 0.4s ease;
+}
+
+.hero-text:hover h2 {
+  opacity: 1;
+  visibility: visible;
+  transform: scale(1);
+}
+
+/* === BUTTON STYLES === */
+.btn {
+  background: #b7e34d;
+  color: #333;
+  padding: 0.75em 1.5em;
+  border-radius: 0.5em;
+  text-decoration: none;
+  font-weight: bold;
+  text-transform: uppercase;
+  transition: background 0.3s;
+}
+
+.btn:hover {
+  background: #a3cc44;
+}
+
+/* === ACCOMMODATION SECTION === */
+.accommodation {
+  max-width: 75em;
+  margin: 0 auto;
+  padding: 3.75em 1.25em;
+  text-align: center;
+}
+
+.section-title {
+  font-size: 1.8rem;
+  margin-bottom: 2.5em;
+  color: #d62828;
+  text-transform: uppercase;
+  border-bottom: 2px solid #d62828;
+  letter-spacing: 0.05em;
+  display: inline-block;
+  padding-bottom: 0.5em;
+}
+
+/* === CARD GRID LAYOUT === */
+.accommodation > ul {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(17.5em, 1fr));
+  gap: 1.875em;
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  align-items: stretch;
+}
+
+.accommodation li {
+  height: 100%;
+}
+
+/* === INDIVIDUAL CARD STYLING === */
+.card {
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  background: linear-gradient(rgba(8, 133, 10, 0), rgb(242, 171, 72));
+  border-radius: 0.75em;
+  box-shadow: 0 0.25em 0.75em rgba(0, 0, 0, 0.1);
+  overflow: hidden;
+  transition: transform 0.3s ease;
+  border: 2px solid #d62828;
+  position: relative;
+}
+
+.card:hover {
+  transform: scale(1.02);
+}
+
+.card::before {
+  content: attr(data-label);
+  position: absolute;
+  top: 0.5em;
+  left: 0.5em;
+  color: #fff;
+  background-color: rgba(214, 40, 40, 0.85);
+  padding: 0.3em 0.6em;
+  font-size: 0.75rem;
+  border-radius: 0.3em;
+  text-transform: uppercase;
+  z-index: 2;
+}
+
+/* === IMAGE STYLING === */
+.card figure img {
+  width: 100%;
+  height: 200px;
+  object-fit: cover;
+  border-radius: 0.5em;
+  box-shadow: 0 0.25em 0.75em rgba(0, 0, 0, 0.1);
+  margin: 0 auto;
+  transition: transform 0.3s ease, filter 0.3s ease;
+}
+
+.card:hover figure img {
+  transform: scale(1.05);
+  filter: brightness(1.1);
+}
+
+.card figcaption {
+  font-size: 0.9rem;
+  color: #333;
+  margin-top: 0.5em;
+  text-align: center;
+}
+
+/* === CARD TEXT === */
+.card h3 {
+  color: #d62828;
+  font-size: 1.2rem;
+  margin: 1em;
+  text-transform: uppercase;
+}
+
+.card p {
+  font-size: 0.95rem;
+  line-height: 1.5;
+  margin: 0 1em 1.25em;
+}
+
+.card p::first-letter {
+  font-size: 1.5em;
+  font-weight: bold;
+  color: #d62828;
+}
+
+/* === FOOTER SECTION === */
+.footer {
+  text-align: center;
+  padding: 1.875em 1.25em;
+  font-size: 0.9rem;
+  background-color: #f8f8f8;
+  position: relative;
+  z-index: 9999;
+}
+
+/* === RESPONSIVE DESIGN === */
+@media (max-width: 768px) {
+  .headerElements {
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .tab {
+    justify-content: center;
+  }
+
+  .hero {
+    height: auto;
+    padding: 3em 1em;
+  }
+
+  .hero-text h2 {
+    font-size: 1.5rem;
+  }
+
+  .accommodation ul {
+    grid-template-columns: 1fr;
+  }
+
+  .card {
+    padding: 1em;
+  }
+
+  .card figure img {
+    height: auto;
+    max-height: 300px;
+  }
+
+  .card h3 {
+    font-size: 1rem;
+  }
+
+  .card p {
+    font-size: 0.85rem;
+  }
+}

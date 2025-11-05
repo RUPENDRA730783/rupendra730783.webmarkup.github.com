@@ -1,0 +1,247 @@
+/* === RESET & BASE STYLES === */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: 'Poppins', sans-serif;
+  background: linear-gradient(to bottom, #ffffff, #43b0ff);
+  line-height: 1.6;
+  color: #333;
+}
+
+/* === HEADER SECTION === */
+.headerElements {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  background: linear-gradient(rgba(0, 14, 176, 0.2), rgb(0, 3, 147));
+  padding: 10px 20px;
+  border-radius: 10px;
+}
+
+.Logo {
+  width: 150px;
+  height: 85px;
+}
+
+.headerText {
+  color: #fff;
+  font-size: 2rem;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+}
+
+.tab {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+}
+
+.tab button {
+  background-color: inherit;
+  border: none;
+  cursor: pointer;
+  color: #f5b010;
+  font-size: 14px;
+  padding: 10px 14px;
+  border-radius: 5px;
+  transition: 0.3s;
+  text-transform: uppercase;
+}
+
+.tab button:hover,
+.tab button.active {
+  background-color: rgb(96, 115, 229);
+  color: #fff;
+  font-weight: bold;
+}
+
+/* === HERO SECTION === */
+.hero {
+  background: url('../img/Destination.1.jpg') center/cover no-repeat;
+  height: 300px;
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+}
+
+.hero::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  backdrop-filter: blur(0px);
+  filter: blur(0px);
+  transition: filter 0.3s ease;
+  z-index: 0;
+}
+
+.hero:hover::after {
+  filter: brightness(0.5);
+  backdrop-filter: blur(1px);
+}
+
+.hero-text {
+  position: relative;
+  z-index: 1;
+  color: #fff;
+  opacity: 0;
+  transition: opacity 0.5s ease;
+  text-shadow: 2px 2px 8px rgba(255, 255, 255, 0.8);
+}
+
+.hero:hover .hero-text {
+  opacity: 1;
+}
+
+.hero-text h2 {
+  font-size: 2rem;
+  margin-bottom: 20px;
+  text-transform: uppercase;
+}
+
+.btn {
+  background: #b7e34d;
+  color: #333;
+  padding: 12px 24px;
+  border-radius: 8px;
+  text-decoration: none;
+  font-weight: bold;
+  transition: background 0.3s;
+  text-transform: uppercase;
+}
+
+.btn:hover {
+  background: #a3cc44;
+}
+
+/* === CONTACT SECTION === */
+.contact-section {
+  padding: 60px 20px;
+  background: linear-gradient(to bottom, #f0f8ff, #e0f7fa);
+}
+
+.section-title {
+  text-align: center;
+  font-size: 2rem;
+  margin-bottom: 30px;
+  color: #d62828;
+  text-transform: uppercase;
+}
+
+.note {
+  text-align: center;
+  margin-bottom: 20px;
+  font-size: 0.95rem;
+  color: #555;
+}
+
+.note span {
+  color: red;
+  font-weight: bold;
+}
+
+/* === FORM LAYOUT === */
+.contact-form {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 20px;
+  max-width: 800px;
+  margin: 0 auto;
+  padding: 30px;
+  background: #fff;
+  border-radius: 10px;
+  box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+}
+
+.contact-form fieldset {
+  grid-column: span 2;
+  border: none;
+  padding: 0;
+}
+
+.contact-form label {
+  display: block;
+  margin-bottom: 6px;
+  font-weight: bold;
+  text-transform: capitalize;
+}
+
+.contact-form input,
+.contact-form select,
+.contact-form textarea {
+  width: 100%;
+  padding: 10px;
+  border: 1px solid #ccc;
+  border-radius: 6px;
+  font-size: 1rem;
+}
+
+.contact-form textarea {
+  resize: vertical;
+  min-height: 120px;
+}
+
+/* === SUBMIT BUTTON === */
+.submit-btn {
+  grid-column: span 2;
+  background-color: #d62828;
+  color: white;
+  padding: 12px;
+  border: none;
+  border-radius: 6px;
+  font-size: 1rem;
+  cursor: pointer;
+  transition: background 0.3s;
+  text-transform: uppercase;
+}
+
+.submit-btn:hover {
+  background-color: #b71c1c;
+}
+
+/* === FOOTER SECTION === */
+.footer {
+  text-align: center;
+  padding: 30px 20px;
+  font-size: 0.9rem;
+  background-color: #f8f8f8;
+}
+
+.footer aside {
+  margin-bottom: 20px;
+}
+
+.footer h4 {
+  color: #d62828;
+  margin-bottom: 10px;
+  text-transform: uppercase;
+}
+
+/* === RESPONSIVE DESIGN === */
+@media (max-width: 768px) {
+  .contact-form {
+    grid-template-columns: 1fr;
+  }
+
+  .submit-btn {
+    grid-column: span 1;
+  }
+
+  .tab {
+    justify-content: center;
+  }
+
+  .hero-text h2 {
+    font-size: 1.5rem;
+  }
+
+  .btn {
+    padding: 10px 20px;
+  }
+}
